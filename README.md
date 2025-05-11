@@ -6,7 +6,7 @@ Este projeto é uma aplicação web simples feita com Python e Flask que permite
 
 ### 🛠️ Como executar o projeto
 
-### 1. Crie e ative um ambiente virtual
+### 1. Extraia os arquivos
 
 Baixe, extrai e abra a pasta https://github.com/kauazica/Atividade_recu/blob/main/Extraia_este_arquivo.zip 
 
