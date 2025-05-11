@@ -1,3 +1,5 @@
+#🧠 Sistema de Gerenciamento de Projetos com Flask
+
 Este projeto é uma aplicação web simples feita com Python e Flask que permite **gerenciar projetos e tarefas**. Os dados são armazenados em arquivos `.csv`.
 
 ---
