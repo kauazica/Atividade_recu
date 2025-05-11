@@ -67,10 +67,10 @@ O projeto **não usa banco de dados tradicional**. Toda a persistência de dados
 - `projetos.csv` → armazena todos os projetos.
 - `tarefas.csv` → armazena todas as tarefas.
 
-### 🌆 Imagens do projeto
+### 🌆 Imagens do projetos
 - Cria e visualiza os projetos criados.
-<img src="{{ url_for('static', filename='imagens/minha_imagem.png') }}" alt="Imagem do Projeto">
+![Untitled](https://github.com/kauazica/Atividade_recu/blob/main/1.png)
 - Edita os projetos criados.
-<img src="{{ url_for('static', filename='imagens/minha_imagem.png') }}" alt="Imagem do Projeto">
+![Untitled](https://github.com/kauazica/Atividade_recu/blob/main/Edit_proj.png)
 - Cria e edita as tarefas criadas.
-- <img src="{{ url_for('static', filename='imagens/minha_imagem.png') }}" alt="Imagem do Projeto">
+![Untitled](https://github.com/kauazica/Atividade_recu/blob/main/2.png)
