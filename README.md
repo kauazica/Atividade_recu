@@ -1,5 +1,3 @@
-# 🧠 Sistema de Gerenciamento de Projetos com Flask
-
 Este projeto é uma aplicação web simples feita com Python e Flask que permite **gerenciar projetos e tarefas**. Os dados são armazenados em arquivos `.csv`.
 
 ---
@@ -8,19 +6,16 @@ Este projeto é uma aplicação web simples feita com Python e Flask que permite
 
 ### 1. Crie e ative um ambiente virtual
 
+Baixe, extrai e abra a pasta https://github.com/kauazica/Atividade_recu/blob/main/Extraia_este_arquivo.zip 
+
+### 2. ative um ambiente virtual
+
 **Windows:**
 
 ```bash
 
 python -m venv venv
 venv\Scripts\activat
-
-```
-
-### 2. Instale as dependências
-
-```bash
-pip install flask
 
 ```
 
