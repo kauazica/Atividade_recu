@@ -71,6 +71,6 @@ O projeto **não usa banco de dados tradicional**. Toda a persistência de dados
 - Cria e visualiza os projetos criados.
 ![Untitled](https://github.com/kauazica/Atividade_recu/blob/main/1.png)
 - Edita os projetos Criados.
-![Untitled](https://github.com/kauazica/Atividade_recu/blob/main/1.png)
+![Untitled](https://github.com/kauazica/Atividade_recu/blob/main/Edit_proj.png)
 - Cria e edita as tarefas criadas.
 ![Untitled](https://github.com/kauazica/Atividade_recu/blob/main/2.png)
