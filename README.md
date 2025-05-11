@@ -62,10 +62,15 @@ python app.py
 - **Tailwind CSS** (para um visual bonito e moderno)
 
 ### 📦 Armazenamento
-
 O projeto **não usa banco de dados tradicional**. Toda a persistência de dados é feita com arquivos `.csv`:
 
 - `projetos.csv` → armazena todos os projetos.
 - `tarefas.csv` → armazena todas as tarefas.
 
 ### 🌆 Imagens do projeto
+- Cria e visualiza os projetos criados.
+<img src="{{ url_for('static', filename='imagens/minha_imagem.png') }}" alt="Imagem do Projeto">
+- Edita os projetos criados.
+<img src="{{ url_for('static', filename='imagens/minha_imagem.png') }}" alt="Imagem do Projeto">
+- Cria e edita as tarefas criadas.
+- <img src="{{ url_for('static', filename='imagens/minha_imagem.png') }}" alt="Imagem do Projeto">
