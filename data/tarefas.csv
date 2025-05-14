@@ -1,0 +1,4 @@
+id,projeto_id,titulo,descricao,status
+1,1,Planejar layout,Criar wireframe e estrutura inicial,Pendente
+2,1,Criar páginas,Codificar HTML e CSS,Em andamento
+3,2,Modelar banco de dados,Definir tabelas e relacionamentos,Concluído

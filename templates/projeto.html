@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ projeto.nome }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-3xl p-6 bg-white text-black rounded-xl shadow-lg">
+        <h1 class="text-3xl font-bold text-center mb-4">{{ projeto.nome }}</h1>
+        <p class="text-center mb-2">{{ projeto.descricao }}</p>
+        <p class="text-center text-sm text-gray-600 mb-6">Criado em: {{ projeto.data_criacao }}</p>
+
+        <form action="{{ url_for('adicionar_tarefa', projeto_id=projeto.id) }}" method="post" class="mb-6 flex flex-col gap-2">
+            <input type="text" name="titulo" placeholder="Título da tarefa" required class="p-2 rounded border">
+            <textarea name="descricao" placeholder="Descrição da tarefa" required class="p-2 rounded border"></textarea>
+            <select name="status" class="p-2 rounded border">
+                <option>Pendente</option>
+                <option>Em andamento</option>
+                <option>Concluída</option>
+            </select>
+            <button type="submit" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Adicionar Tarefa</button>
+        </form>
+
+        <h2 class="text-2xl font-semibold mb-2">Tarefas</h2>
+        <ul class="space-y-4">
+            {% for tarefa in tarefas %}
+                <li class="border p-4 rounded-lg bg-gray-100">
+                    <h3 class="text-lg font-bold">{{ tarefa.titulo }}</h3>
+                    <p>{{ tarefa.descricao }}</p>
+                    <p class="text-sm text-gray-600">Status: {{ tarefa.status }}</p>
+                    <form action="{{ url_for('editar_tarefa', id=tarefa.id, projeto_id=projeto.id) }}" method="post" class="mt-2 flex flex-col gap-1">
+                        <input type="text" name="titulo" value="{{ tarefa.titulo }}" required class="p-1 rounded border">
+                        <input type="text" name="descricao" value="{{ tarefa.descricao }}" required class="p-1 rounded border">
+                        <select name="status" class="p-1 rounded border">
+                            <option {% if tarefa.status == 'Pendente' %}selected{% endif %}>Pendente</option>
+                            <option {% if tarefa.status == 'Em andamento' %}selected{% endif %}>Em andamento</option>
+                            <option {% if tarefa.status == 'Concluída' %}selected{% endif %}>Concluída</option>
+                        </select>
+                        <div class="flex gap-2 mt-1">
+                            <button type="submit" class="bg-yellow-500 text-white px-2 py-1 rounded">Salvar</button>
+                            <a href="{{ url_for('remover_tarefa', id=tarefa.id, projeto_id=projeto.id) }}" class="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700">Excluir</a>
+                        </div>
+                    </form>
+                </li>
+            {% else %}
+                <p class="text-center text-gray-600">Nenhuma tarefa registrada.</p>
+            {% endfor %}
+        </ul>
+
+        <div class="text-center mt-6">
+            <a href="/" class="text-blue-600 hover:underline">← Voltar para Projetos</a>
+        </div>
+    </div>
+</body>
+</html>

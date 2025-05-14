@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Tarefa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-xl p-6 bg-white text-black rounded-xl shadow-lg">
+        <h1 class="text-3xl font-bold text-center mb-6">Editar Tarefa</h1>
+        <form action="/editar_tarefa/{{ tarefa.id }}/{{ projeto_id }}" method="post" class="flex flex-col gap-3">
+            <input type="text" name="titulo" value="{{ tarefa.titulo }}" required class="p-2 rounded border">
+            <textarea name="descricao" required class="p-2 rounded border">{{ tarefa.descricao }}</textarea>
+            <select name="status" class="p-2 rounded border">
+                <option {% if tarefa.status == 'Pendente' %}selected{% endif %}>Pendente</option>
+                <option {% if tarefa.status == 'Em andamento' %}selected{% endif %}>Em andamento</option>
+                <option {% if tarefa.status == 'Concluída' %}selected{% endif %}>Concluída</option>
+            </select>
+            <button type="submit" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Salvar</button>
+        </form>
+        <div class="text-center mt-6">
+            <a href="/projeto/{{ projeto_id }}" class="text-blue-600 hover:underline">← Voltar para Projeto</a>
+        </div>
+    </div>
+</body>
+</html>
