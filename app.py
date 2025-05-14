@@ -68,7 +68,11 @@ def criar_projeto():
 @app.route('/projeto/<id>')
 def ver_projeto(id):
     projetos = carregar_projetos()
-    projeto = next((p for p in projetos if p['id'] == id), None)
+    projeto = None
+    for p in projetos:
+        if p['id'] == id:
+            projeto = p
+            break
     tarefas = [t for t in carregar_tarefas() if t['projeto_id'] == id]
     return render_template('projeto.html', projeto=projeto, tarefas=tarefas)
 
@@ -87,12 +91,18 @@ def excluir_projeto(id):
 @app.route('/projeto/<id>/editar', methods=['GET', 'POST'])
 def editar_projeto(id):
     projetos = carregar_projetos()
-    projeto = next((p for p in projetos if p['id'] == id), None)
-    if request.method == 'POST':
+    projeto = None
+    for p in projetos:
+        if p['id'] == id:
+            projeto = p
+            break
+
+    if request.method == 'POST' and projeto:
         projeto['nome'] = request.form['nome']
         projeto['descricao'] = request.form['descricao']
         salvar_projetos(projetos)
         return redirect(url_for('index'))
+
     return render_template('editar_projeto.html', projeto=projeto)
 
 
@@ -114,12 +124,18 @@ def adicionar_tarefa(projeto_id):
 @app.route('/editar_tarefa/<id>/<projeto_id>', methods=['POST'])
 def editar_tarefa(id, projeto_id):
     tarefas = carregar_tarefas()
-    tarefa = next((t for t in tarefas if t['id'] == id), None)
+    tarefa = None
+    for t in tarefas:
+        if t['id'] == id:
+            tarefa = t
+            break
+
     if tarefa:
         tarefa['titulo'] = request.form['titulo']
         tarefa['descricao'] = request.form['descricao']
         tarefa['status'] = request.form['status']
         salvar_tarefas(tarefas)
+
     return redirect(url_for('ver_projeto', id=projeto_id))
 
 
