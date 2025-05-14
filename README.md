@@ -13,7 +13,7 @@ Este projeto é uma aplicação web simples feita com Python e Flask que permite
 ```bash
 
 python -m venv venv
-venv\Scripts\activat
+venv\Scripts\activate
 
 ```
 
