@@ -9,7 +9,6 @@ Este projeto é uma aplicação web simples feita com Python e Flask que permite
 
 ### 1. ative um ambiente virtual
 
-**Windows:**
 
 ```bash
 
